@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Next Level Ginásio Amarante — Musculação, Aulas Coletivas e Personal Trainer. Treina como quiseres, mas treina connosco.">
+  <title>Next Level Ginásio · Amarante</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Barlow:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --y: #F2CC00;
+      --y-dim: rgba(242,204,0,0.12);
+      --black: #070707;
+      --dark: #0f0f0f;
+      --dark2: #161616;
+      --white: #ffffff;
+      --muted: rgba(255,255,255,0.45);
+      --muted2: rgba(255,255,255,0.08);
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 5%;
+      background: rgba(7,7,7,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: border-color 0.3s;
+    }
+
+    .nav-logo-svg { height: 40px; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.4rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--y); }
+
+    .btn-nav {
+      background: var(--y);
+      color: var(--black);
+      padding: 0.55rem 1.4rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-nav:hover { opacity: 0.82; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: white;
+      transition: transform 0.25s;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      background: var(--black) center / cover no-repeat;
+      /* → Adiciona aqui a tua foto hero: background-image: url('images/hero.jpg'); */
+    }
+
+    .hero-img-placeholder {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 70% 40%, rgba(242,204,0,0.04) 0%, transparent 60%),
+        linear-gradient(135deg, #0a0a0a 0%, #111 50%, #0a0a0a 100%);
+    }
+
+    /* Remove este bloco quando colocares a foto real */
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(7,7,7,1) 0%,
+        rgba(7,7,7,0.7) 40%,
+        rgba(7,7,7,0.2) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 5% 5rem;
+      max-width: 900px;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--y);
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--y);
+    }
+
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(64px, 11vw, 130px);
+      line-height: 0.9;
+      letter-spacing: 0.01em;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+    }
+
+    .hero h1 .accent {
+      color: var(--y);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: italic;
+      font-weight: 700;
+      font-size: 0.65em;
+      line-height: 1.1;
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 3rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .btn-primary {
+      background: var(--y);
+      color: var(--black);
+      padding: 1rem 2.6rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+
+    .btn-ghost {
+      color: var(--white);
+      padding: 1rem 2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.25);
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-ghost:hover { border-color: var(--y); color: var(--y); }
+
+    .hero-scroll {
+      position: relative;
+      z-index: 2;
+      padding: 1.5rem 5%;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      border-top: 1px solid var(--muted2);
+      overflow-x: auto;
+    }
+
+    .hero-scroll::-webkit-scrollbar { display: none; }
+
+    .hero-pill {
+      white-space: nowrap;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--muted2);
+      transition: all 0.2s;
+    }
+
+    .hero-pill:hover { color: var(--y); border-color: var(--y-dim); }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar {
+      background: var(--y);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .stat {
+      flex: 1;
+      min-width: 140px;
+      padding: 1.6rem 2rem;
+      text-align: center;
+      border-right: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 40px;
+      color: var(--black);
+      line-height: 1;
+      margin-bottom: 0.2rem;
+    }
+
+    .stat-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.55);
+    }
+
+    /* ─── SECTION BASE ─── */
+    .section { padding: 6rem 5%; }
+
+    .section-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--y);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 1.5px;
+      background: var(--y);
+    }
+
+    h2.display {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(42px, 6.5vw, 80px);
+      line-height: 0.95;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── SERVICES ─── */
+    .services { background: var(--dark); }
+
+    .services-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 3.5rem;
+    }
+
+    .services-head p {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--muted2);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--muted2);
+    }
+
+    .svc {
+      background: var(--dark);
+      padding: 2.8rem 2.4rem;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .svc::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--y);
+      transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .svc:hover { background: #131313; }
+    .svc:hover::before { width: 100%; }
+
+    .svc-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 64px;
+      color: rgba(255,255,255,0.04);
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .svc-icon {
+      font-size: 36px;
+      margin-bottom: 1.6rem;
+      display: block;
+    }
+
+    .svc h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.8rem;
+    }
+
+    .svc p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    /* ─── MANIFESTO ─── */
+    .manifesto {
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 640px;
+    }
+
+    .mani-visual {
+      background: var(--dark2) center / cover no-repeat;
+      /* → Foto: background-image: url('images/about.jpg'); */
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .mani-visual-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .mani-neon {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(22px, 3vw, 36px);
+      letter-spacing: 0.08em;
+      color: var(--y);
+      text-shadow: 0 0 20px rgba(242,204,0,0.5), 0 0 60px rgba(242,204,0,0.2);
+      padding: 2rem;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .mani-text {
+      background: var(--dark);
+      padding: 5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .mani-text blockquote {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 1.05;
+      margin-bottom: 2rem;
+    }
+
+    .mani-text blockquote em {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-style: italic;
+      font-weight: 700;
+      color: var(--y);
+      font-size: 0.72em;
+    }
+
+    .mani-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      font-size: 16px;
+    }
+
+    /* ─── CLASSES ─── */
+    .classes { background: var(--dark); }
+
+    .classes-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .classes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 1px;
+      background: var(--muted2);
+    }
+
+    .cls {
+      background: var(--dark);
+      padding: 2rem 1.6rem;
+      cursor: default;
+      transition: background 0.2s;
+      position: relative;
+    }
+
+    .cls::after {
+      content: attr(data-num);
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.08);
+    }
+
+    .cls:hover { background: var(--dark2); }
+    .cls:hover .cls-name { color: var(--y); }
+
+    .cls-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.3rem;
+      transition: color 0.2s;
+    }
+
+    .cls-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ─── PRICING ─── */
+    .pricing { background: var(--black); }
+
+    .pricing-head { margin-bottom: 3.5rem; }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--muted2);
+      max-width: 820px;
+    }
+
+    .plan {
+      background: var(--dark);
+      padding: 3rem 2.5rem;
+      position: relative;
+    }
+
+    .plan.hot { background: var(--y); }
+
+    .plan-badge {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .plan:not(.hot) .plan-badge {
+      background: var(--muted2);
+      color: var(--muted);
+    }
+
+    .plan.hot .plan-badge {
+      background: rgba(0,0,0,0.15);
+      color: rgba(0,0,0,0.7);
+    }
+
+    .plan-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 80px;
+      line-height: 1;
+      margin-bottom: 0.2rem;
+      color: var(--white);
+    }
+
+    .plan.hot .plan-price { color: var(--black); }
+
+    .plan-price sup {
+      font-size: 28px;
+      vertical-align: top;
+      margin-top: 14px;
+      display: inline-block;
+    }
+
+    .plan-period {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .plan.hot .plan-period { color: rgba(0,0,0,0.5); }
+
+    .plan-features {
+      list-style: none;
+      margin-bottom: 2.5rem;
+    }
+
+    .plan-features li {
+      padding: 0.6rem 0;
+      font-size: 14px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--muted2);
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+    }
+
+    .plan.hot .plan-features li {
+      color: rgba(0,0,0,0.7);
+      border-bottom-color: rgba(0,0,0,0.1);
+    }
+
+    .tick {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      background: var(--y);
+      color: var(--black);
+      font-size: 10px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .plan.hot .tick { background: var(--black); color: var(--y); }
+
+    .btn-plan {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      padding: 1rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
+    .plan:not(.hot) .btn-plan {
+      border: 1px solid rgba(255,255,255,0.18);
+      color: var(--white);
+    }
+
+    .plan:not(.hot) .btn-plan:hover {
+      background: var(--y);
+      color: var(--black);
+      border-color: var(--y);
+    }
+
+    .plan.hot .btn-plan {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    .plan.hot .btn-plan:hover { opacity: 0.82; }
+
+    /* ─── CTA BAND ─── */
+    .cta-band {
+      background: var(--y);
+      padding: 5.5rem 5%;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(42px, 6vw, 72px);
+      color: var(--black);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .cta-band p {
+      font-size: 18px;
+      color: rgba(0,0,0,0.55);
+      margin-bottom: 2.8rem;
+    }
+
+    .btn-black {
+      background: var(--black);
+      color: var(--white);
+      padding: 1.1rem 3.2rem;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+
+    .btn-black:hover { opacity: 0.82; }
+
+    /* ─── CONTACT ─── */
+    .contact { background: var(--dark); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 5rem;
+    }
+
+    .contact-info h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      color: var(--y);
+      margin-bottom: 0.4rem;
+      margin-top: 2rem;
+    }
+
+    .contact-info h3:first-of-type { margin-top: 0; }
+
+    .contact-info p, .contact-info a {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      text-decoration: none;
+      display: block;
+    }
+
+    .contact-info a:hover { color: var(--y); }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--white);
+      padding: 1rem 1.2rem;
+      font-family: 'Barlow', sans-serif;
+      font-size: 15px;
+      outline: none;
+      width: 100%;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus { border-color: var(--y); }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder { color: rgba(255,255,255,0.2); }
+
+    .contact-form select option { background: #111; }
+
+    .contact-form textarea { height: 130px; resize: vertical; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--black);
+      border-top: 1px solid var(--muted2);
+      padding: 2rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1.8rem;
+    }
+
+    .footer-socials a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-socials a:hover { color: var(--y); }
+
+    /* ─── MOBILE NAV PANEL ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 64px 0 0 0;
+      background: rgba(7,7,7,0.97);
+      z-index: 190;
+      padding: 2.5rem 5%;
+      flex-direction: column;
+      gap: 0;
+      border-top: 1px solid var(--muted2);
+    }
+
+    .mobile-menu.open { display: flex; }
+
+    .mobile-menu a {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--muted2);
+      transition: color 0.2s;
+    }
+
+    .mobile-menu a:hover { color: var(--y); }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 960px) {
+      .services-head { grid-template-columns: 1fr; gap: 2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .manifesto { grid-template-columns: 1fr; }
+      .mani-visual { min-height: 340px; }
+      .mani-text { padding: 3rem 2rem; }
+      .classes-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links { display: none; }
+      .btn-nav { display: none; }
+      .hamburger { display: flex; }
+      .hero-content { padding: 0 5% 5rem; }
+      .section { padding: 4rem 5%; }
+      .manifesto { min-height: auto; }
+      footer { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .stats-bar { flex-direction: column; }
+      .stat { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
+      .stat:last-child { border-bottom: none; }
+    }
+
+    /* ─── SCROLL ANIMATIONS ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.25,1,0.5,1), transform 0.7s cubic-bezier(0.25,1,0.5,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════ NAV ═══════════ -->
+<nav id="nav">
+  <!--
+    Logo Next Level em CSS puro.
+    Frame incompleto no canto top-right + três barras verticais + wordmark HTML.
+  -->
+  <a href="#hero" style="text-decoration:none;display:flex;align-items:center;gap:10px">
+
+    <!-- Icon mark: frame CSS + barras -->
+    <div style="
+      position:relative;
+      width:42px;height:44px;
+      flex-shrink:0;
+    ">
+      <!-- Frame: borda esquerda -->
+      <div style="position:absolute;left:0;top:0;bottom:0;width:2px;background:white"></div>
+      <!-- Frame: borda inferior -->
+      <div style="position:absolute;left:0;right:0;bottom:0;height:2px;background:white"></div>
+      <!-- Frame: borda direita (só metade inferior) -->
+      <div style="position:absolute;right:0;bottom:0;top:50%;width:2px;background:white"></div>
+      <!-- Frame: borda superior (para antes das barras) -->
+      <div style="position:absolute;left:0;top:0;width:55%;height:2px;background:white"></div>
+
+      <!-- Três barras verticais no canto top-right -->
+      <div style="position:absolute;right:10px;top:2px;width:4px;height:14px;background:white"></div>
+      <div style="position:absolute;right:5px;top:2px;width:4px;height:14px;background:#F2CC00"></div>
+      <div style="position:absolute;right:0;top:2px;width:4px;height:14px;background:white"></div>
+
+      <!-- NEXT dentro do frame -->
+      <div style="
+        position:absolute;left:5px;top:10px;
+        font-family:'Arial Black',Impact,sans-serif;
+        font-weight:900;font-size:9px;
+        letter-spacing:0.05em;color:white;
+        line-height:1;
+      ">NEXT</div>
+
+      <!-- LEVEL com E em amarelo -->
+      <div style="
+        position:absolute;left:5px;bottom:10px;
+        font-family:'Arial Black',Impact,sans-serif;
+        font-weight:900;font-size:9px;
+        letter-spacing:0.05em;color:white;
+        line-height:1;
+        display:flex;align-items:center;gap:0;
+      ">
+        <span>L</span>
+        <!-- E como 3 barras -->
+        <span style="
+          display:inline-flex;flex-direction:column;
+          justify-content:center;gap:1.5px;
+          margin:0 0.5px;height:9px;
+        ">
+          <span style="display:block;width:5px;height:1.5px;background:white"></span>
+          <span style="display:block;width:4px;height:1.5px;background:#F2CC00"></span>
+          <span style="display:block;width:5px;height:1.5px;background:white"></span>
+        </span>
+        <span>VEL</span>
+      </div>
+
+      <!-- GINÁSIO no fundo -->
+      <div style="
+        position:absolute;bottom:3px;left:50%;transform:translateX(-50%);
+        font-family:Arial,sans-serif;font-size:4px;
+        letter-spacing:0.25em;color:rgba(255,255,255,0.35);
+        white-space:nowrap;
+      ">GINÁSIO</div>
+    </div>
+
+    <!-- Wordmark HTML -->
+    <div style="display:flex;flex-direction:column;line-height:1;gap:3px">
+      <span style="
+        font-family:'Arial Black',Impact,sans-serif;
+        font-weight:900;font-size:14px;
+        letter-spacing:0.1em;color:#fff;
+        line-height:1;
+      ">NEXT LEVEL</span>
+      <span style="
+        font-family:Arial,sans-serif;font-size:6.5px;
+        letter-spacing:0.3em;color:rgba(255,255,255,0.35);
+        text-transform:uppercase;
+      ">Ginásio · Amarante</span>
+    </div>
+
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#aulas">Aulas</a></li>
+    <li><a href="#precos">Preços</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+
+  <div style="display:flex;align-items:center;gap:0.8rem">
+    <a href="#contacto" class="btn-nav">Experimenta Grátis</a>
+    <button class="hamburger" id="ham" aria-label="Menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<nav class="mobile-menu" id="mobile-menu">
+  <a href="#servicos" onclick="closeMenu()">Serviços</a>
+  <a href="#aulas" onclick="closeMenu()">Aulas</a>
+  <a href="#precos" onclick="closeMenu()">Preços</a>
+  <a href="#contacto" onclick="closeMenu()">Contacto</a>
+  <a href="#contacto" onclick="closeMenu()" style="color:var(--y);margin-top:1.5rem;border:none">Experimenta Grátis →</a>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<!--
+  FOTO HERO: coloca a tua melhor foto do ginásio em images/hero.jpg
+  e adiciona ao elemento .hero o style:
+  background-image: url('images/hero.jpg');
+-->
+<section class="hero" id="hero"
+  style="/* background-image: url('images/hero.jpg') */">
+  <div class="hero-img-placeholder"></div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-content">
+    <h1>
+      TREINA COMO<br>
+      QUISERES,
+      <span class="accent">mas treina connosco.</span>
+    </h1>
+    <p class="hero-sub">O teu próximo nível começa aqui.</p>
+    <div class="hero-ctas">
+      <a href="#contacto" class="btn-primary">Experimenta Grátis</a>
+      <a href="#aulas" class="btn-ghost">Ver Aulas ↓</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span class="hero-pill">Musculação</span>
+    <span class="hero-pill">Aulas Coletivas</span>
+    <span class="hero-pill">Personal Trainer</span>
+    <span class="hero-pill">Pilates Clínico</span>
+    <span class="hero-pill">CrossFit</span>
+    <span class="hero-pill">Cycling</span>
+    <span class="hero-pill">HIIT</span>
+    <span class="hero-pill">Jiu-Jitsu Kids</span>
+  </div>
+</section>
+
+<!-- ═══════════ STATS ═══════════ -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-num">4+</div>
+    <div class="stat-label">Anos de Experiência</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">13</div>
+    <div class="stat-label">Modalidades de Treino</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">6h30</div>
+    <div class="stat-label">Abertura Diária</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">Amarante</div>
+    <div class="stat-label">A tua cidade, o teu ginásio</div>
+  </div>
+</div>
+
+<!-- ═══════════ SERVIÇOS ═══════════ -->
+<section class="services section reveal" id="servicos">
+  <div class="services-head">
+    <div>
+      <p class="section-tag">O que fazemos</p>
+      <h2 class="display">Tudo o que<br>precisas para<br>evoluir.</h2>
+    </div>
+    <p>Não somos um ginásio genérico. Instrutores que conhecem o teu nome, um espaço cuidado e um ambiente onde te apetece aparecer todos os dias.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc">
+      <span class="svc-num">01</span>
+      <span class="svc-icon">🏋️</span>
+      <h3>Musculação</h3>
+      <p>Zona de pesos completa para treino de força, hipertrofia e condição física. Para todos os níveis e objetivos.</p>
+    </div>
+    <div class="svc">
+      <span class="svc-num">02</span>
+      <span class="svc-icon">⚡</span>
+      <h3>Aulas Coletivas</h3>
+      <p>Mais de 13 modalidades. Do Pump ao Pilates, do HIIT ao Cross. Sempre orientadas por instrutores certificados e motivados.</p>
+    </div>
+    <div class="svc">
+      <span class="svc-num">03</span>
+      <span class="svc-icon">🎯</span>
+      <h3>Personal Trainer</h3>
+      <p>Treino personalizado ao teu corpo, aos teus objetivos e ao teu ritmo. Progressão real com acompanhamento contínuo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ MANIFESTO ═══════════ -->
+<!--
+  FOTO ABOUT: coloca uma boa foto do ginásio / atmosfera em images/about.jpg
+  e adiciona ao elemento .mani-visual o style:
+  background-image: url('images/about.jpg');
+-->
+<div class="manifesto reveal">
+  <div class="mani-visual"
+    style="/* background-image: url('images/about.jpg') */">
+    <div class="mani-visual-placeholder">
+      <div class="mani-neon">THIS IS MY<br>HAPPY PLACE</div>
+    </div>
+  </div>
+  <div class="mani-text">
+    <p class="section-tag">A nossa filosofia</p>
+    <blockquote>
+      Treinar é a nova<br>forma de
+      <em>"sair com amigos."</em>
+      E nós percebemos porquê.
+    </blockquote>
+    <p>Criámos um espaço onde a motivação não depende de força de vontade solitária. Depende de comunidade, de instrutores presentes e de um ambiente que te puxa para cima.</p>
+    <p>Há 4 anos em Amarante a construir algo diferente. Uma comunidade que volta todos os dias — não por obrigação, mas por vontade.</p>
+    <a href="#contacto" class="btn-primary" style="margin-top:1.5rem;align-self:flex-start">Junta-te a Nós</a>
+  </div>
+</div>
+
+<!-- ═══════════ AULAS ═══════════ -->
+<section class="classes section reveal" id="aulas">
+  <div class="classes-head">
+    <div>
+      <p class="section-tag">Mais de 13 modalidades</p>
+      <h2 class="display">As Nossas<br>Aulas</h2>
+    </div>
+    <a href="#contacto" class="btn-ghost">Pedir Horários</a>
+  </div>
+
+  <div class="classes-grid">
+    <div class="cls" data-num="01">
+      <div class="cls-name">Pump</div>
+      <div class="cls-tag">Força · Resistência</div>
+    </div>
+    <div class="cls" data-num="02">
+      <div class="cls-name">Cross</div>
+      <div class="cls-tag">Funcional · Intensidade</div>
+    </div>
+    <div class="cls" data-num="03">
+      <div class="cls-name">Funcional</div>
+      <div class="cls-tag">Movimento · Mobilidade</div>
+    </div>
+    <div class="cls" data-num="04">
+      <div class="cls-name">YourFit Pulse</div>
+      <div class="cls-tag">Cardio · Ritmo</div>
+    </div>
+    <div class="cls" data-num="05">
+      <div class="cls-name">Attack</div>
+      <div class="cls-tag">Cardio · Energia</div>
+    </div>
+    <div class="cls" data-num="06">
+      <div class="cls-name">Pilates Clínico</div>
+      <div class="cls-tag">Postura · Reabilitação</div>
+    </div>
+    <div class="cls" data-num="07">
+      <div class="cls-name">Cycling</div>
+      <div class="cls-tag">Cardio · Resistência</div>
+    </div>
+    <div class="cls" data-num="08">
+      <div class="cls-name">YourFit Booty</div>
+      <div class="cls-tag">Glúteos · Definição</div>
+    </div>
+    <div class="cls" data-num="09">
+      <div class="cls-name">YourFit Jump</div>
+      <div class="cls-tag">Pliométrico · Cardio</div>
+    </div>
+    <div class="cls" data-num="10">
+      <div class="cls-name">HIIT</div>
+      <div class="cls-tag">Alta Intensidade</div>
+    </div>
+    <div class="cls" data-num="11">
+      <div class="cls-name">Core</div>
+      <div class="cls-tag">Estabilidade · Força</div>
+    </div>
+    <div class="cls" data-num="12">
+      <div class="cls-name">Circuito de Força</div>
+      <div class="cls-tag">Treino Completo</div>
+    </div>
+    <div class="cls" data-num="13">
+      <div class="cls-name">Jiu-Jitsu Kids</div>
+      <div class="cls-tag">Artes Marciais · Crianças</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ PREÇOS ═══════════ -->
+<section class="pricing section reveal" id="precos">
+  <div class="pricing-head">
+    <p class="section-tag">Sem surpresas</p>
+    <h2 class="display">Uma mensalidade.<br>Tudo incluído.</h2>
+    <p style="color:var(--muted);max-width:520px;margin-top:0.8rem;font-size:17px;line-height:1.8">
+      No Next Level não pagas por cada aula. Pagas uma mensalidade e tens acesso a tudo — sala de musculação, aulas coletivas, instrutores sempre disponíveis. Sem taxas escondidas, sem letras pequenas.
+    </p>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="plan">
+      <div class="plan-badge">Acesso Completo</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--y);letter-spacing:0.06em;margin-bottom:0.4rem">O QUE ESTÁ INCLUÍDO</div>
+      <ul class="plan-features" style="margin-bottom:2.5rem">
+        <li><div class="tick">✓</div> Sala de musculação completa</li>
+        <li><div class="tick">✓</div> Todas as aulas coletivas</li>
+        <li><div class="tick">✓</div> Sem limite de visitas</li>
+        <li><div class="tick">✓</div> Balneários equipados</li>
+        <li><div class="tick">✓</div> Instrutores sempre presentes</li>
+        <li><div class="tick">✓</div> Comunidade Next Level</li>
+      </ul>
+      <a href="#contacto" class="btn-plan">Saber o Valor</a>
+    </div>
+    <div class="plan hot">
+      <div class="plan-badge">⚡ Acesso Premium</div>
+      <div style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--black);letter-spacing:0.06em;margin-bottom:0.4rem">TUDO ISSO, MAIS:</div>
+      <ul class="plan-features" style="margin-bottom:2.5rem">
+        <li><div class="tick">✓</div> Pilates Clínico incluído</li>
+        <li><div class="tick">✓</div> Avaliação física gratuita</li>
+        <li><div class="tick">✓</div> Acesso prioritário às aulas</li>
+        <li><div class="tick">✓</div> Acompanhamento personalizado</li>
+        <li><div class="tick">✓</div> Plano de treino adaptado</li>
+        <li><div class="tick">✓</div> Sessão PT de boas-vindas</li>
+      </ul>
+      <a href="#contacto" class="btn-plan">Saber o Valor</a>
+    </div>
+  </div>
+
+  <p style="margin-top:2rem;font-size:14px;color:var(--muted)">
+    Tens dúvidas? <a href="#contacto" style="color:var(--y);text-decoration:none">Fala connosco</a> — respondemos rápido.
+  </p>
+</section>
+
+<!-- ═══════════ CTA BAND ═══════════ -->
+<div class="cta-band reveal">
+  <h2>PRIMEIRA AULA GRÁTIS.<br>SEM COMPROMISSO.</h2>
+  <p>Experimenta antes de decidir. Sem pressão, sem contratos.</p>
+  <!-- Substitui o número pelo número real do WhatsApp -->
+  <a href="https://wa.me/351915627996?text=Olá!%20Quero%20marcar%20uma%20aula%20grátis%20no%20Next%20Level." class="btn-black" target="_blank">Marcar pelo WhatsApp →</a>
+</div>
+
+<!-- ═══════════ CONTACTO ═══════════ -->
+<section class="contact section reveal" id="contacto">
+  <p class="section-tag">Estamos aqui</p>
+  <h2 class="display" style="margin-bottom:3rem">Contacto</h2>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Morada</h3>
+      <!-- Actualiza com a morada real -->
+      <p>[Rua Aquilino Ribeiro, Nº 140 4600-050 ]<br>Amarante, Portugal</p>
+
+      <h3>Horário</h3>
+      <p>
+        Segunda a Sexta: 06h30 – 22h00<br>
+        Sábado: 09h00 – 18h00<br>
+        Domingo: Fechado
+      </p>
+
+      <h3>Telemóvel</h3>
+      <!-- Substitui pelo número real -->
+      <a href="tel:+351"> 915 627 996</a>
+
+      <h3>Email</h3>
+      <!-- Substitui pelo email real -->
+      <a href="mailto:nextlevelamarante@gmail.com">nextlevelamarante@gmail.com</a>
+
+      <h3>Redes Sociais</h3>
+      <div style="display:flex;gap:1rem;margin-top:0.4rem;flex-wrap:wrap">
+        <a href="https://www.instagram.com/nextlevelamarante?igsh=MXdsd3k1aHJ0cGx5Zg%3D%3D&utm_source=qr" target="_blank" style="color:var(--y)">Instagram ↗</a>
+        <a href="https://www.facebook.com/share/1GvuoEUoGc/?mibextid=wwXIfr" target="_blank" style="color:var(--muted)">Facebook ↗</a>
+      </div>
+    </div>
+
+    <div>
+      <p style="color:var(--muted);margin-bottom:2rem;font-size:15px">
+        Preenche o formulário e entramos em contacto nas próximas 24h.
+      </p>
+      <form class="contact-form" onsubmit="handleForm(event)">
+        <input type="text" name="nome" placeholder="Nome completo" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="telemovel" placeholder="Telemóvel">
+        <select name="interesse">
+          <option value="" disabled selected>O que te interessa?</option>
+          <option value="socio">Tornar-me sócio</option>
+          <option value="aula-gratis">Aula grátis</option>
+          <option value="personal">Personal Trainer</option>
+          <option value="pilates">Pilates Clínico</option>
+          <option value="outro">Outra questão</option>
+        </select>
+        <textarea name="mensagem" placeholder="Conta-nos um pouco sobre o que procuras..."></textarea>
+        <button type="submit" class="btn-primary" style="border:none;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:0.14em">
+          Enviar Mensagem
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer>
+  <div class="footer-copy">
+    © 2025 Next Level Ginásio · Amarante · Todos os direitos reservados
+  </div>
+  <div class="footer-socials">
+    <a href="https://www.instagram.com/nextlevelamarante?igsh=MXdsd3k1aHJ0cGx5Zg%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/share/1GvuoEUoGc/?mibextid=wwXIfr" target="_blank">Facebook</a>
+    <a href="https://wa.me/351915627996" target="_blank">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+  /* ─ Mobile menu ─ */
+  function toggleMenu() {
+    document.getElementById('mobile-menu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobile-menu').classList.remove('open');
+  }
+
+  /* ─ Nav scroll accent ─ */
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('nav');
+    nav.style.borderBottomColor = window.scrollY > 60
+      ? 'rgba(242,204,0,0.12)'
+      : 'rgba(255,255,255,0.05)';
+  }, { passive: true });
+
+  /* ─ Scroll reveal ─ */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* ─ Form submit feedback ─ */
+  function handleForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type=submit]');
+    const orig = btn.textContent;
+    btn.textContent = 'Mensagem enviada ✓';
+    btn.style.background = '#1a1a1a';
+    btn.style.color = '#F2CC00';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3500);
+  }
+</script>
+</body>
+</html>
