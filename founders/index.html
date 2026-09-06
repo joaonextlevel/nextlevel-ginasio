@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Next Level Founding Member</title>
+<meta name="description" content="75 vagas de Founding Member no Next Level HYROX Training Club, Amarante. Entra na lista de espera.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;900&family=Barlow:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --carbon:#0C0C0B; --surface:#171716; --line:#2A2A27;
+    --volt:#F2E500; --volt-ink:#0C0C0B;
+    --bone:#F1EEE3; --ash:#9A978B; --ash-dim:#5E5C54;
+    --ok:#7CE38B;
+    --display:"Barlow Condensed","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+    --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+    --max:1040px;
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html{color-scheme:dark}
+  body{margin:0;background:var(--carbon);color:var(--bone);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:var(--volt)}
+  h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:.95;text-transform:uppercase;letter-spacing:.005em}
+  h1{font-weight:900;font-size:clamp(46px,10vw,96px)}
+  h2{font-weight:900;font-size:clamp(34px,6vw,60px)}
+  h3{font-weight:700;font-size:clamp(22px,3vw,28px)}
+  p{margin:0}
+  .wrap{width:min(var(--max),100% - 40px);margin-inline:auto}
+  .eyebrow{font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--volt)}
+  .muted{color:var(--ash)}
+  .lede{font-size:clamp(18px,2.2vw,21px);max-width:38em}
+
+  /* top bar */
+  .bar{display:flex;align-items:center;justify-content:space-between;padding:18px 0;border-bottom:1px solid var(--line)}
+  .brand{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:900;font-size:20px;letter-spacing:.06em;text-transform:uppercase;color:var(--bone);text-decoration:none}
+  .brand .mark{width:34px;height:34px;background:var(--volt);color:var(--volt-ink);display:grid;place-items:center;font-size:13px;line-height:1;font-weight:900;text-align:center;letter-spacing:0}
+  .bar .tag{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)}
+  @media (max-width:520px){.bar .tag{display:none}}
+
+  /* hero */
+  .hero{padding:56px 0 40px;display:grid;gap:36px}
+  @media (min-width:860px){.hero{grid-template-columns:1.1fr .9fr;align-items:center;padding:80px 0 64px}}
+  .hero h1 .volt{color:var(--volt)}
+  .hero .stack{display:grid;gap:22px}
+  .cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--volt);color:var(--volt-ink);font-family:var(--display);font-weight:900;font-size:20px;letter-spacing:.08em;text-transform:uppercase;padding:18px 28px;text-decoration:none;border:0;cursor:pointer;min-height:58px}
+  .cta:hover{background:#FFF23A}
+  .cta:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--volt);outline-offset:3px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .cta-row .note{font-size:14px;color:var(--ash)}
+
+  /* ticket */
+  .ticket{--r:14px;position:relative;display:grid;grid-template-columns:1fr auto;background:var(--bone);color:var(--carbon);border-radius:var(--r);overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.9);transform:rotate(-2deg);max-width:520px;width:100%;justify-self:center}
+  .ticket .main{padding:26px 24px 22px;display:grid;gap:14px}
+  .ticket .stub{border-left:2px dashed var(--carbon);padding:22px 16px;display:grid;grid-template-rows:auto 1fr auto;align-items:center;justify-items:center;gap:12px;background:var(--volt);min-width:104px}
+  .ticket .stub::before,.ticket .stub::after{content:"";position:absolute;width:26px;height:26px;border-radius:50%;background:var(--carbon);left:calc(100% - 104px - 13px)}
+  .ticket .stub::before{top:-13px}.ticket .stub::after{bottom:-13px}
+  .ticket .label{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash-dim)}
+  .ticket .admit{font-family:var(--display);font-weight:900;font-size:clamp(34px,7vw,50px);line-height:.9;text-transform:uppercase}
+  .ticket .row{display:flex;justify-content:space-between;gap:12px;font-family:var(--display);font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.06em;border-top:1px solid #C9C5B6;padding-top:12px}
+  .ticket .row b{font-weight:900;font-size:18px}
+  .ticket .barcode{width:44px;height:120px;background:repeating-linear-gradient(to bottom,var(--carbon) 0 2px,transparent 2px 5px,var(--carbon) 5px 6px,transparent 6px 9px,var(--carbon) 9px 12px,transparent 12px 14px)}
+  .ticket .stub .label{writing-mode:vertical-rl;transform:rotate(180deg);color:var(--carbon)}
+  .ticket .serial{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.12em}
+
+  /* counter strip */
+  .strip{border-block:1px solid var(--line);background:var(--surface)}
+  .strip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:22px 0}
+  .strip .k{font-family:var(--display);font-weight:900;font-size:clamp(30px,5vw,46px);line-height:1;color:var(--volt);font-variant-numeric:tabular-nums}
+  .strip .l{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash);font-family:var(--display);font-weight:700;margin-top:6px}
+  @media (max-width:520px){.strip .wrap{gap:10px}.strip .l{font-size:11px}}
+
+  section{padding:64px 0}
+  @media (min-width:860px){section{padding:88px 0}}
+  .head{display:grid;gap:14px;margin-bottom:34px;max-width:40em}
+
+  /* perks */
+  .perks{display:grid;gap:2px;border:1px solid var(--line)}
+  .perk{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:22px;background:var(--surface);align-items:start}
+  .perk .n{font-family:var(--display);font-weight:900;font-size:40px;line-height:.9;color:var(--volt);min-width:64px;font-variant-numeric:tabular-nums}
+  .perk h3{margin-bottom:6px}
+  .perk.lead{grid-column:1/-1;background:var(--volt);color:var(--volt-ink)}
+  .perk.lead .n{color:var(--volt-ink)}
+  .perk.lead p{color:#3A3A2A}
+  @media (min-width:700px){.perks{grid-template-columns:1fr 1fr}}
+  .perk .muted{color:var(--ash)}
+
+  /* hyrox */
+  .hyrox{background:var(--surface);border-block:1px solid var(--line)}
+  .hyrox .grid{display:grid;gap:36px}
+  @media (min-width:860px){.hyrox .grid{grid-template-columns:1fr 1fr;align-items:start}}
+  .stations{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+  .stations li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-family:var(--display);font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.03em}
+  .stations li span{color:var(--ash);font-weight:500;font-variant-numeric:tabular-nums}
+  .stations li::before{content:"1 KM â†’";color:var(--volt);font-size:12px;letter-spacing:.14em;align-self:center}
+  @media (max-width:520px){.stations{grid-template-columns:1fr}.stations li{font-size:17px}}
+
+  /* steps */
+  .steps{display:grid;gap:18px}
+  @media (min-width:700px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{border-top:3px solid var(--volt);padding-top:16px;display:grid;gap:8px}
+  .step .t{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--ash)}
+
+  /* form */
+  .signup{background:var(--volt);color:var(--volt-ink)}
+  .signup .eyebrow{color:var(--volt-ink)}
+  .signup .grid{display:grid;gap:36px}
+  @media (min-width:860px){.signup .grid{grid-template-columns:.9fr 1.1fr;align-items:start}}
+  .signup .muted{color:#4A4A38}
+  form{display:grid;gap:14px;background:var(--carbon);color:var(--bone);padding:26px;border-radius:6px}
+  .field{display:grid;gap:6px}
+  label{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ash)}
+  input,select{width:100%;background:var(--surface);color:var(--bone);border:1px solid var(--line);padding:14px;font:500 17px var(--body);border-radius:4px}
+  input::placeholder{color:var(--ash-dim)}
+  .two{display:grid;gap:14px}
+  @media (min-width:560px){.two{grid-template-columns:1fr 1fr}}
+  form .cta{width:100%;margin-top:6px}
+  .fine{font-size:13px;color:var(--ash);line-height:1.45}
+  .success{display:grid;gap:12px;background:var(--carbon);color:var(--bone);padding:30px 26px;border-radius:6px;border:2px solid var(--ok)}
+  .success h3{color:var(--ok)}
+  .err{color:#FFB3A7;font-size:14px}
+
+  /* faq */
+  details{border-top:1px solid var(--line)}
+  details:last-of-type{border-bottom:1px solid var(--line)}
+  summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:18px 0;font-family:var(--display);font-weight:700;font-size:21px;text-transform:uppercase;letter-spacing:.02em}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+";color:var(--volt);font-weight:900;font-size:26px;line-height:1}
+  details[open] summary::after{content:"â€“"}
+  details p{padding:0 0 20px;max-width:40em;color:var(--ash)}
+
+  footer{border-top:1px solid var(--line);padding:32px 0 48px;font-size:14px;color:var(--ash);display:grid;gap:10px}
+  footer .brand{font-size:16px}
+  .final{display:grid;gap:18px;justify-items:start}
+
+  @media (prefers-reduced-motion:no-preference){
+    .ticket{animation:drop .7s cubic-bezier(.2,.8,.2,1) both}
+    @keyframes drop{from{transform:rotate(-6deg) translateY(-18px);opacity:.6}to{transform:rotate(-2deg) translateY(0);opacity:1}}
+  }
+</style>
+
+<header class="wrap bar">
+  <a class="brand" href="#top"><span class="mark">NEXT<br>LEVEL</span>Next Level</a>
+  <span class="tag">HYROX Training Club Â· Amarante</span>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="stack">
+      <p class="eyebrow">LanÃ§amento Â· 75 vagas Â· Amarante</p>
+      <h1>SÃª um dos <span class="volt">75</span> que abrem o clube.</h1>
+      <p class="lede">O Next Level Ã© um HYROX Training Club afiliado, em Amarante. Antes de abrir as portas a toda a gente, abrimos a 75 pessoas com estatuto de Founding Member: 75% de desconto na inscriÃ§Ã£o e condiÃ§Ãµes que nunca mais vÃ£o existir.</p>
+      <div class="cta-row">
+        <a class="cta" href="#lista">Entrar na lista de espera</a>
+        <span class="note">Sem pagamento online. Ligamos-te em 24h.</span>
+      </div>
+    </div>
+
+    <div class="ticket" aria-label="Bilhete Founding Member">
+      <div class="main">
+        <span class="label">Admission Â· Next Level HYROX Training Club</span>
+        <div class="admit">Founding<br>Member</div>
+        <div class="row"><span>Vagas</span><b>75</b></div>
+        <div class="row"><span>Desconto na inscriÃ§Ã£o</span><b>75%</b></div>
+        <div class="row"><span>Estatuto</span><b>VitalÃ­cio</b></div>
+        <span class="serial">NÂº 001 â€” 075 Â· AMARANTE</span>
+      </div>
+      <div class="stub">
+        <span class="label">Founding Member</span>
+        <div class="barcode" aria-hidden="true"></div>
+        <span class="serial">2026</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="wrap">
+      <div><div class="k" data-count="vagas">75</div><div class="l">Vagas no total</div></div>
+      <div><div class="k">75%</div><div class="l">Desconto na inscriÃ§Ã£o</div></div>
+      <div><div class="k">1x</div><div class="l">SÃ³ acontece uma vez</div></div>
+    </div>
+  </div>
+
+  <section class="wrap" id="oferta">
+    <div class="head">
+      <p class="eyebrow">O que recebes</p>
+      <h2>Founding Member nÃ£o Ã© um desconto. Ã‰ um lugar.</h2>
+      <p class="muted lede">Quem entra agora fica com um estatuto que os prÃ³ximos membros nÃ£o vÃ£o poder comprar a nenhum preÃ§o.</p>
+    </div>
+    <div class="perks">
+      <div class="perk lead">
+        <div class="n">75%</div>
+        <div><h3>De desconto na inscriÃ§Ã£o</h3><p>A taxa de entrada no clube fica a um quarto do valor normal. SÃ³ para as primeiras 75 pessoas da lista.</p></div>
+      </div>
+      <div class="perk">
+        <div class="n">01</div>
+        <div><h3>CondiÃ§Ãµes de fundador</h3><p class="muted">A tua mensalidade e o teu plano sÃ£o definidos ao balcÃ£o, com condiÃ§Ãµes reservadas a founders. NÃ£o as publicamos aqui, e Ã© de propÃ³sito.</p></div>
+      </div>
+      <div class="perk">
+        <div class="n">02</div>
+        <div><h3>Primeiro a entrar</h3><p class="muted">Acesso ao espaÃ§o e aos horÃ¡rios antes da abertura ao pÃºblico. Escolhes as tuas classes antes de haver fila.</p></div>
+      </div>
+      <div class="perk">
+        <div class="n">03</div>
+        <div><h3>Nome na parede dos 75</h3><p class="muted">Os fundadores ficam identificados no clube. Para sempre, nÃ£o sÃ³ no primeiro ano.</p></div>
+      </div>
+      <div class="perk">
+        <div class="n">04</div>
+        <div><h3>Prioridade em eventos e provas</h3><p class="muted">SimulaÃ§Ãµes HYROX, treinos de equipa e viagens a competiÃ§Ãµes: os founders tÃªm lugar garantido primeiro.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hyrox">
+    <div class="wrap grid">
+      <div class="head" style="margin:0">
+        <p class="eyebrow">Para quem nunca fez</p>
+        <h2>O que Ã© o HYROX, em 20 segundos.</h2>
+        <p class="muted lede">Uma prova de fitness igual em todo o mundo: 8 km de corrida, divididos em 8 voltas de 1 km, e entre cada volta uma estaÃ§Ã£o de trabalho. Toda a gente faz o mesmo percurso, do iniciante ao profissional. No Next Level treinas exatamente estas 8 estaÃ§Ãµes, com o mÃ©todo oficial do HYROX Training Club.</p>
+      </div>
+      <ul class="stations">
+        <li>SkiErg <span>1000 m</span></li>
+        <li>Sled Push <span>50 m</span></li>
+        <li>Sled Pull <span>50 m</span></li>
+        <li>Burpee Broad Jumps <span>80 m</span></li>
+        <li>Rowing <span>1000 m</span></li>
+        <li>Farmers Carry <span>200 m</span></li>
+        <li>Sandbag Lunges <span>100 m</span></li>
+        <li>Wall Balls <span>100 reps</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap" id="como">
+    <div class="head">
+      <p class="eyebrow">Como funciona</p>
+      <h2>TrÃªs passos. Nenhum deles Ã© pagar online.</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="t">Passo 1</span><h3>Entras na lista</h3><p class="muted">Nome, telemÃ³vel e email. Demora 30 segundos e nÃ£o te compromete a nada.</p></div>
+      <div class="step"><span class="t">Passo 2</span><h3>Ligamos-te em 24h</h3><p class="muted">Explicamos as condiÃ§Ãµes de fundador, tiramos dÃºvidas e marcamos a tua visita ao espaÃ§o.</p></div>
+      <div class="step"><span class="t">Passo 3</span><h3>Garantes a vaga ao balcÃ£o</h3><p class="muted">A inscriÃ§Ã£o faz-se presencialmente na Rua Aquilino Ribeiro n.Âº 140, Amarante. As vagas sÃ£o atribuÃ­das por ordem de entrada na lista.</p></div>
+    </div>
+  </section>
+
+  <section class="signup" id="lista">
+    <div class="wrap grid">
+      <div class="head" style="margin:0">
+        <p class="eyebrow">Lista de espera</p>
+        <h2>Garante o teu nÃºmero.</h2>
+        <p class="muted lede">A ordem da lista Ã© a ordem das vagas. Quando as 75 estiverem atribuÃ­das, quem ficar de fora entra como membro normal, sem o desconto e sem o estatuto.</p>
+      </div>
+
+      <form name="founding-member" method="POST" action="https://api.web3forms.com/submit" novalidate>
+        <!-- SUBSTITUI o valor abaixo pela tua Access Key do Web3Forms (ver instruÃ§Ãµes) -->
+        <input type="hidden" name="access_key" value="b8e81627-3263-4fd8-a840-15b903b4aa94">
+        <input type="hidden" name="subject" value="Nova inscriÃ§Ã£o Founding Member â€” Next Level">
+        <input type="hidden" name="from_name" value="Lista de espera Next Level">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" type="text" autocomplete="name" placeholder="O teu nome" required></div>
+        <div class="two">
+          <div class="field"><label for="tel">TelemÃ³vel</label><input id="tel" name="telemovel" type="tel" inputmode="tel" autocomplete="tel" placeholder="9XX XXX XXX" required></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.pt" required></div>
+        </div>
+        <div class="field">
+          <label for="nivel">Onde estÃ¡s no HYROX</label>
+          <select id="nivel" name="nivel">
+            <option>Nunca fiz, quero comeÃ§ar</option>
+            <option>Treino, mas nunca competi</option>
+            <option>JÃ¡ fiz pelo menos uma prova</option>
+          </select>
+        </div>
+        <p class="err" id="err" hidden></p>
+        <button class="cta" type="submit">Entrar na lista de espera</button>
+        <p class="fine">Usamos os teus dados sÃ³ para te contactar sobre as vagas de Founding Member. Sem newsletters, sem partilha com terceiros.</p>
+      </form>
+
+      <div class="success" id="ok" hidden>
+        <p class="eyebrow" style="color:var(--ok)">EstÃ¡s na lista</p>
+        <h3>Recebemos o teu pedido.</h3>
+        <p class="muted">Vamos ligar-te em 24 horas para o nÃºmero que deixaste. Se preferires adiantar, manda mensagem no Instagram para <a href="https://instagram.com/nextlevelamarante">@nextlevelamarante</a> com a palavra FOUNDER.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="faq">
+    <div class="head">
+      <p class="eyebrow">DÃºvidas</p>
+      <h2>O que nos perguntam mais.</h2>
+    </div>
+    <details><summary>Preciso de jÃ¡ fazer HYROX para ser founder?</summary><p>NÃ£o. A maioria dos 75 nunca fez uma prova. O treino Ã© escalÃ¡vel: a mesma sessÃ£o serve para quem comeÃ§a e para quem jÃ¡ compete, com pesos e distÃ¢ncias diferentes.</p></details>
+    <details><summary>Quanto custa a mensalidade?</summary><p>As condiÃ§Ãµes de fundador sÃ£o explicadas ao telefone e fechadas ao balcÃ£o. NÃ£o as publicamos online porque sÃ£o exclusivas dos 75 e nÃ£o queremos que fiquem como referÃªncia para quem entra depois.</p></details>
+    <details><summary>Entrar na lista obriga-me a alguma coisa?</summary><p>NÃ£o. A lista sÃ³ define a ordem de prioridade. A decisÃ£o Ã© tua depois de falares connosco e de visitares o espaÃ§o.</p></details>
+    <details><summary>O que acontece quando as 75 vagas acabarem?</summary><p>Fecha a lista. Quem entrar depois entra como membro normal, com a inscriÃ§Ã£o a preÃ§o inteiro e sem o estatuto de Founding Member.</p></details>
+    <details><summary>O clube Ã© mesmo HYROX oficial?</summary><p>Sim. O Next Level Ã© um HYROX Training Club afiliado, o que significa treinar com o mÃ©todo oficial, nas estaÃ§Ãµes e distÃ¢ncias reais da prova.</p></details>
+  </section>
+
+  <section class="wrap final">
+    <p class="eyebrow">Ãšltima chamada</p>
+    <h2>75 lugares. Ordem de chegada.</h2>
+    <a class="cta" href="#lista">Entrar na lista de espera</a>
+  </section>
+</main>
+
+<footer class="wrap">
+  <a class="brand" href="#top"><span class="mark">NEXT<br>LEVEL</span>Next Level HYROX Training Club</a>
+  <p>Rua Aquilino Ribeiro n.Âº 140, 4600-050 Amarante Â· <a href="https://maps.google.com/?q=Rua+Aquilino+Ribeiro+140,+4600-050+Amarante">Ver no mapa</a> Â· <a href="https://instagram.com/nextlevelamarante">@nextlevelamarante</a></p>
+  <p>HYROX Ã© uma marca registada da Upsolut Sports. Next Level Ã© um HYROX Training Club afiliado.</p>
+</footer>
+
+<script>
+(function(){
+  var form=document.querySelector('form[name="founding-member"]');
+  var ok=document.getElementById('ok');
+  var err=document.getElementById('err');
+  function show(msg){err.textContent=msg;err.hidden=false;}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();err.hidden=true;
+    var nome=form.nome.value.trim(),tel=form.telemovel.value.replace(/\s+/g,''),mail=form.email.value.trim();
+    if(nome.length<2){show('Diz-nos o teu nome.');form.nome.focus();return;}
+    if(!/^(\+?351)?9\d{8}$/.test(tel)){show('Confirma o telemÃ³vel: 9 dÃ­gitos, a comeÃ§ar por 9.');form.telemovel.focus();return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail)){show('Confirma o email.');form.email.focus();return;}
+    var btn=form.querySelector('button');btn.disabled=true;btn.textContent='A enviarâ€¦';
+    var data=Object.fromEntries(new FormData(form).entries());delete data.botcheck;
+    var done=function(){form.hidden=true;ok.hidden=false;ok.scrollIntoView({behavior:'smooth',block:'center'});};
+    var fail=function(){btn.disabled=false;btn.textContent='Entrar na lista de espera';show('NÃ£o conseguimos enviar. Tenta outra vez ou manda DM para @nextlevelamarante.');};
+    if(!data.access_key||data.access_key.indexOf('COLOCA')===0){done();return;} // prÃ©-visualizaÃ§Ã£o sem chave
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){return r.json();})
+      .then(function(j){if(j.success){done();}else{fail();}})
+      .catch(fail);
+  });
+})();
+</script>
+
+</html>
