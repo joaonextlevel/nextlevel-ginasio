@@ -90,10 +90,10 @@
 <!-- Ligação para saltar a navegação (acessibilidade) -->
 <a class="sr-only" href="#conteudo">Saltar para o conteúdo</a>
 
-<!-- ═══ BARRA DE CAMPANHA — remove-se sozinha depois de 25/09/2026 (ver script no fim) ═══ -->
-<a id="announce" href="/founders/" data-founders-only>
-  <span class="long">HYROX Training Club · Últimas vagas Founding Member · <span id="announce-dias">Lista fecha a 25 de setembro</span></span>
-  <span class="short">HYROX · Últimas vagas Founding Member</span>
+<!-- ═══ BARRA DE CAMPANHA — Founding Member HYROX ═══ -->
+<a id="announce" href="/founders/">
+  <span class="long">HYROX Training Club · Vagas de Founding Member limitadas · Entra na lista</span>
+  <span class="short">HYROX · Vagas Founding Member</span>
   <span aria-hidden="true">→</span>
 </a>
 
@@ -506,7 +506,7 @@
     <div class="links">
       <a href="/privacidade/">Política de privacidade</a>
       <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a>
-      <a href="/founders/" data-founders-only>Founding Member HYROX</a>
+      <a href="/founders/">Founding Member HYROX</a>
       <a href="https://www.instagram.com/nextlevelamarante" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/nextlevelamarante" target="_blank" rel="noopener">Facebook</a>
     </div>
@@ -540,22 +540,6 @@
 
   /* Ano do footer */
   document.getElementById('ano').textContent = new Date().getFullYear();
-
-  /* Campanha Founding Member: barra e links desaparecem depois de 25/09/2026 */
-  var fecho = new Date('2026-09-25T23:59:59+01:00');
-  var dias = Math.ceil((fecho - new Date()) / 86400000);
-  if (dias <= 0) {
-    document.body.classList.remove('has-announce');
-    document.querySelectorAll('[data-founders-only]').forEach(function(el){ el.remove(); });
-    document.querySelectorAll('a[data-hyrox-link]').forEach(function(a){
-      a.setAttribute('href', 'https://wa.me/351915627996?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20o%20HYROX%20Training%20Club.');
-      a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener');
-      a.textContent = 'Quero treinar HYROX';
-    });
-  } else {
-    var t = document.getElementById('announce-dias');
-    if (t) t.textContent = dias === 1 ? 'Último dia' : 'Faltam ' + dias + ' dias';
-  }
 
   /* Barra fixa: só aparece depois de passar o hero (evita duplicar o CTA na primeira dobra) */
   var sticky = document.getElementById('sticky');
