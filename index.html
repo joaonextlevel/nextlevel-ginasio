@@ -524,7 +524,7 @@
   <a class="btn btn-ghost" href="#precos">Ver preços</a>
 </div>
 
-<!-- ═══ CONSENTIMENTO — carrega o GA4 só depois de aceitar. SUBSTITUI G-XXXXXXXXXX pelo ID real. ═══ -->
+<!-- ═══ CONSENTIMENTO — carrega o GA4 só depois de aceitar. ═══ -->
 <div class="consent" id="consent" hidden role="dialog" aria-label="Cookies">
   <p>Usamos cookies de estatística para perceber o que funciona no site. Sem publicidade. <a href="/privacidade/">Saber mais</a>.</p>
   <div class="row">
@@ -535,7 +535,8 @@
 
 <script>
 (function(){
-  var GA_ID = 'G-XXXXXXXXXX'; // <-- ID do GA4
+  var GA_ID = 'G-X3GQSYVLRH'; // ID do GA4 (propriedade nextlevelamarante.com)
+  var GA_OK = /^G-[A-Z0-9]{6,}$/.test(GA_ID) && GA_ID.indexOf('XXXX') === -1;
 
   /* Ano do footer */
   document.getElementById('ano').textContent = new Date().getFullYear();
@@ -593,14 +594,14 @@
   var consent = document.getElementById('consent'), choice = null;
   try { choice = localStorage.getItem('nl-consent'); } catch(err){}
   function loadGA(){
-    if (GA_ID.indexOf('G-X') === 0) return; // sem ID configurado
+    if (!GA_OK) return; // sem ID configurado
     var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(s);
     window.dataLayer = window.dataLayer || []; window.gtag = function(){ dataLayer.push(arguments); };
     gtag('js', new Date()); gtag('config', GA_ID, { anonymize_ip: true });
   }
   function decide(v){ try { localStorage.setItem('nl-consent', v); } catch(err){} consent.hidden = true; if (v === 'yes') loadGA(); }
   if (choice === 'yes') loadGA();
-  else if (choice !== 'no' && GA_ID.indexOf('G-X') !== 0) consent.hidden = false;
+  else if (choice !== 'no' && GA_OK) consent.hidden = false;
   document.getElementById('consent-ok').addEventListener('click', function(){ decide('yes'); });
   document.getElementById('consent-no').addEventListener('click', function(){ decide('no'); });
 })();
