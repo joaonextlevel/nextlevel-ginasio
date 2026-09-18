@@ -158,6 +158,21 @@ body.menu-open{overflow:hidden}
 .plan .btn{margin-top:6px}
 .plan-notes{margin-top:18px;font-size:15px;color:var(--muted);max-width:60em}
 
+/* Valor por aula — enquadra o preço pelo que recebes, não pelo número isolado */
+.price-sub{font-size:15px;line-height:1.4;color:var(--muted);margin-top:-4px}
+.plan.hot .price-sub{color:var(--ink-soft)}
+.plan.hot .price-sub b{color:var(--ink);font-weight:600}
+.per-class{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:26px;max-width:880px}
+@media (min-width:620px){.per-class{grid-template-columns:repeat(3,1fr)}}
+.per-class .pc{background:var(--dark);padding:18px 16px;display:grid;gap:6px;align-content:start}
+.per-class .n{font-family:var(--display);font-weight:900;font-size:clamp(30px,4.6vw,40px);line-height:1;color:var(--y)}
+.per-class .d{font-size:14px;color:var(--muted);line-height:1.4}
+.per-class .d b{color:var(--white);font-weight:600}
+.per-class-note{margin-top:12px;font-size:14px;color:var(--muted2);max-width:60em}
+.proof-line{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 28px;font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2)}
+.proof-line span{display:inline-flex;align-items:baseline;gap:8px}
+.proof-line b{color:var(--y);font-weight:900;font-size:20px;letter-spacing:.02em}
+
 /* Horários */
 .table-wrap{overflow-x:auto;border:1px solid var(--line);background:var(--dark)}
 table.sched{border-collapse:collapse;width:100%;min-width:680px;font-size:15px}
@@ -199,7 +214,19 @@ table.sched td{color:var(--muted)}
 .cls p{font-size:14px;color:var(--muted)}
 @media (min-width:960px){.cls p{font-size:15px}}
 
+/* Saúde · Pilates Clínico e treino adaptado */
+.saude-grid{display:grid;gap:28px}
+@media (min-width:860px){.saude-grid{grid-template-columns:.9fr 1.1fr;align-items:center}}
+.saude-grid>img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line)}
+@media (max-width:859px){.saude-grid>img{aspect-ratio:16/10}}
+.saude-list{display:grid;gap:12px;margin-top:20px}
+.saude-list li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--muted);line-height:1.5}
+.saude-list li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;background:var(--y)}
+.saude-list li>span{flex:1 1 auto;min-width:0}
+.saude-list b{color:var(--white);font-weight:600}
+
 /* HYROX */
+.sep{border-top:1px solid var(--line)}
 .hyrox-grid{display:grid;gap:28px}
 @media (min-width:860px){.hyrox-grid{grid-template-columns:1.1fr .9fr;align-items:center}}
 .hyrox-grid img{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--line)}
